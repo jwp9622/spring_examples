@@ -14,4 +14,5 @@ public interface BoardRepository extends CrudRepository<Board, Long> {
 
     ArrayList<Board> findByBid(String bid);
 
+    Board findByBidAndIdxAndPassword(String bid, Long idx, String Password);
 }

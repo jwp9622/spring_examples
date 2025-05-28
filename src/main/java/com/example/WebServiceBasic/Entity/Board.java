@@ -20,32 +20,32 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)  //JPA Entity 에 이벤트가 발생할 관련 코드를 실행
 public class Board {
     @Id
-    @GeneratedValue
-    Long idx;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idx;
 
     @Column
-    String bid;
+    private String bid;
 
     @Column
-    String title;
+    private String title;
 
     @Column
-    String name;
+    private String name;
 
     @Column
-    String content;
+    private String content;
 
-    @Column
-    String password;
+    @Column(updatable = false)
+    private String password;
 
     @Column(nullable = true, updatable = false)
     //@DateTimeFormat(pattern = "yyyy-MM-dd")
     @CreatedDate
-    LocalDateTime createdDate;
+    private LocalDateTime createdDate;
 
     @Column(nullable = true)
     //@DateTimeFormat(pattern = "yyyy-MM-dd")
     @LastModifiedDate
-    LocalDateTime modifiedDate;
+    private LocalDateTime modifiedDate;
 
 }

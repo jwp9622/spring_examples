@@ -18,15 +18,15 @@ import java.util.Date;
 @Getter
 @Setter
 public class BoardForm {
-    Long idx;
-    String bid;
-    String title;
-    String name;
-    String content;
-    String password;
-    LocalDateTime createdDate;
-    LocalDateTime modifiedDate;
-    Long n;
+    private Long idx;
+    private String bid;
+    private String title;
+    private String name;
+    private String content;
+    private  String password;
+    private LocalDateTime createdDate;
+    private LocalDateTime modifiedDate;
+    private Long n;
 
     public Board toEntity(){
         return new Board(idx, bid, title, name, content, password, createdDate, modifiedDate);

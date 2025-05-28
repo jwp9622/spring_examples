@@ -16,19 +16,19 @@ public class BoardManager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 id 자동 생성
-    int idx;
+    private int idx;
 
     @Column
-    String bid;
+    private String bid;
 
     @Column
-    String boardName;
+    private String boardName;
 
     @Column
-    int pageSize;
+    private int pageSize;
 
     @Column
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    String date;
+    private String date;
 
 }

@@ -177,25 +177,37 @@ public class BoardController {
 
 
     @PostMapping("/board/{bid}/delete")
-    public String boardDelete(BoardForm form, Model model){
+    public String boardDelete(BoardForm form, Model model, RedirectAttributes rttr){
+        log.info("-----delete ------");
+        log.info("----form----"+form.toString());
 
         //0. bid 값을 받아온다.
         String bid = form.getBid();
         Long idx = form.getN();
+        log.info("bid====="+bid);
+        log.info("idx======="+idx);
 
         //1. 해당 게시판 있는지 여부 체크후 없으면 메인으로 이동
         manager = managerRepository.findByBid(bid);
         if(manager == null) return "redirect:/";
 
         //2. 글존재여부 확인후 삭제
-        Board target = boardRepository.findByIdx(idx);
-        if(target !=null && form.getPassword().equals(target.getPassword())){
+        Board target = boardRepository.findByBidAndIdxAndPassword(bid, idx, form.getPassword());
+
+        String retUrl;
+        if(target ==null ){
+            rttr.addFlashAttribute("msg","비밀번호가 일치하지 않습니다.");
+            retUrl = "/board/"+bid+"/password";
+        }else{
             boardRepository.delete(target);
-            //rttr.addFlashAttribute("msg","삭제되었습니다.");
+            rttr.addFlashAttribute("msg","삭제되었습니다.");
+            retUrl = "/board/"+bid+"/";
         }
 
         //3.리스트 페이지 이동
-        return "/board/"+bid+"/";
+        return "redirect:"+retUrl;
+
+
     }
 
 }

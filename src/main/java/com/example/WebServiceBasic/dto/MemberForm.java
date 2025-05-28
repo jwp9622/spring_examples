@@ -10,10 +10,10 @@ import java.util.Date;
 @ToString
 public class MemberForm {
     int idx;
-    String userid;
-    String email;
-    String password;
-    Date date;
+    private String userid;
+    private String email;
+    private String password;
+    private Date date;
 
     public Member toEntity(){
         return new Member(idx, userid, email, password, date);

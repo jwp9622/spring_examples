@@ -7,11 +7,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class BoardManagerForm {
-    int idx;
-    String bid;
-    String boardName;
-    int pageSize;
-    String date;
+    private int idx;
+    private String bid;
+    private String boardName;
+    private int pageSize;
+    private String date;
 
     public BoardManager Entity(){
         return new BoardManager(idx, bid, boardName, pageSize, date);

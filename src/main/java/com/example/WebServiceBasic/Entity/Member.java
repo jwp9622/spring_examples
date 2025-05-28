@@ -17,19 +17,19 @@ public class Member {
 
     @Id
     @GeneratedValue
-    int idx;
+    private int idx;
 
     @Column
-    String userid;
+    private String userid;
 
     @Column
-    String email;
+    private String email;
 
     @Column
-    String password;
+    private String password;
 
     @Column
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    Date date;
+    private Date date;
 
 }
