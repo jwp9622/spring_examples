@@ -10,7 +10,7 @@ import lombok.ToString;
 @ToString
 @Getter
 @Setter
-public class CoffeeForm {
+public class CoffeeDto {
     private int id;
     private String name;
     private String price;

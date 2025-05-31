@@ -9,13 +9,14 @@ import org.springframework.data.repository.query.Param;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public interface BoardManagerRepository extends CrudRepository<BoardManager, Long> {
 
     @Override
     ArrayList<BoardManager> findAll();
 
-    BoardManager findByBid(String bid);
+    Optional<BoardManager> findByBid(String bid);
 
     /*
     User findByIdAfter(Long id);

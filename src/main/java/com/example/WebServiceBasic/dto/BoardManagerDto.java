@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @ToString
-public class BoardManagerForm {
+public class BoardManagerDto {
     private int idx;
     private String bid;
     private String boardName;

@@ -15,20 +15,20 @@
                 </div>
 
                 <!-- Search and buttons -->
+                <form mehtod="post" action="" class="rounded position-relative">
                 <div class="row g-3 align-items-center mb-5">
                     <!-- Search -->
                     <div class="col-xl-5">
-                        <form class="rounded position-relative">
-                            <input class="form-control pe-5" type="검색어를 입력하세요" placeholder="Search" aria-label="Search">
-                            <button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"></button>
-                        </form>
-                    </div>
+                            <input name="keyword" class="form-control pe-5" type="검색어를 입력하세요" placeholder="Search" aria-label="Search">
+                            <button type="submit" class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y"></button>
+                  </div>
 
                     <!-- Button -->
                     <div class="col-sm-6 col-xl-3">
                         <a href="#" class="btn btn-primary mb-0">검색</a>
                     </div>
                 </div>
+                </form>
             </div>
 
 
@@ -71,7 +71,7 @@
 
 
             <div class="col-sm-6 col-xl-3">
-                <a href="/board/{{bid}}/write" class="btn btn-primary mb-0">등록</a>
+                <a href="/board/{{bid}}/reg" class="btn btn-primary mb-0">등록</a>
             </div>
 
         </section>

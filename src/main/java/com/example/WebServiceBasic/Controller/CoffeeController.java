@@ -2,7 +2,7 @@ package com.example.WebServiceBasic.Controller;
 
 import com.example.WebServiceBasic.Entity.Coffee;
 import com.example.WebServiceBasic.Repository.CoffeeRepository;
-import com.example.WebServiceBasic.dto.CoffeeForm;
+import com.example.WebServiceBasic.dto.CoffeeDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +30,7 @@ public class CoffeeController {
     }
     //생성
     @PostMapping
-    public Coffee createCoffee(@RequestBody CoffeeForm dto){
+    public Coffee createCoffee(@RequestBody CoffeeDto dto){
         Coffee coffee = new Coffee();
         coffee.setName(dto.getName());
         coffee.setPrice(dto.getPrice());
@@ -39,7 +39,7 @@ public class CoffeeController {
     //수정
     @PatchMapping("{id}")
     public ResponseEntity<Coffee> updateCoffee(@PathVariable Long id,
-                                            @RequestBody CoffeeForm dto){
+                                            @RequestBody CoffeeDto dto){
         return coffeeRepository.findById(id)
                 .map(coffee ->{
                     coffee.setName(dto.getName());

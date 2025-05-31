@@ -21,9 +21,13 @@ import java.util.Date;
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true)
     private Long idx;
 
-    @Column
+    //@Column
+    //private String bid;
+    //ManyToOne // 이 엔티티(Comment)와 부모 엔티티(Article)를 다대일 관계로 설정
+    //@JoinColumn(name = "bid") // 외래키 생성, board 엔티티의 기본키(bid)와 매핑
     private String bid;
 
     @Column
