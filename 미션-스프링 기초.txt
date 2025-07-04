@@ -1,0 +1,40 @@
+
+## 스프링 프레임워크 기초
+
+1. AOP를 사용한 트랜잭션 관리 구현하기
+  - AOP(Aspect-Oriented Programming, AOP) 관점 지향 프로그래밍
+
+  - build.gradle내에 의존성을 추가합니다.
+    dependencies {   
+        implementation 'org.springframework.boot:spring-boot-starter-aop'   
+    }   
+2. @Primary를 사용하여 기본 빈 설정하기
+
+3. Qualifier를 사용하여 동일한 타입의 빈 주입 제어하기
+
+4. 프로퍼티 파일을 이용한 환경 설정 주입하기
+
+5. 빈 라이프사이클 메서드 활용하기
+
+6. JavaConfig를 사용한 빈 설정
+
+
+7. 인터페이스를 사용하여 의존성 주입하기
+
+8. AOP를 사용하여 애스펙트 구현하기
+
+9. 싱글톤 빈 스코프와 프로토타입 빈 스코프 구현하기
+비즈니스 로직, 서비스 로직, 데이터 액세스
+@Service
+@Repository
+유틸리티 또는 공통 컴포넌트(비밀번호 암호화)
+@Controller
+
+10. 순환 의존성 해결하기
+@Lazy 사용
+
+11. 애너테이션을 사용하여 빈 주입하기
+@Component로 빈 정의하기
+
+12. 구성 파일에서 정의된 빈 간 관계 구현하기
+@Bean으로 빈 정의하기
